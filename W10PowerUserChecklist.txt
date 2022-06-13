@@ -1,0 +1,29 @@
+This was originally written in my W10BSRemover script as a few lines, then it gradually increased over the development period.
+I decided to just put this in its own file in a new repo where files like it will go.
+This is in no particular order, and was written as I thought of it.
+
+Recommendations that I wont/cant script here that will stengthen your control in the war against the operating system and/or its components.
+Running the W10BSRemover script or something similar to it, preferably before a user account is ever created
+Deprovision packages before an iso is live.
+If you use a microsoft acc to sign in, change to a local account
+Request data deletions locally via settings (probably in account privacy or protection), and from the microsoft account panel via browser if you were/are using MS account to log on
+Download Process Explorer, and replace taskmanager with it. (launch any instance of it, or the native task manager with: super + r -> "taskmgr" -> enter)
+Download autoruns to see hidden/arcane scheduled tasks you can curate and manually kill to your liking. ProcExp (Process Explorer) also helps with this.
+go into windows security settings and turn off "tamper prevention" (as it prevents you from changing things around, not malware), turn of all cloud-based "features" as well
+Turn off internet connection whenever you dont actively need it or wont be using it for the next twenty or so minutes at least
+Remove automatic internet connection on launch, this may be only an option via your network engine, it will also help w/ above
+Make sure to check services.msc for some other problematic services (like KillerAnalyticsService for users w/ Killer network drivers)
+If you have Java on your system, reduce some bandwith by killing (and preventing from starting up on login) the services: jucheck.exe and jusched.exe
+Use the ublock origin domain blocker list or the extended telemetry list, it can be found in the "resources" repo of my github @ https://github.com/InquireWithin/resources/blob/main/ublock_adblock_server_filter.txt
+^ copy and paste this into your hosts file (C:\Windows\System32\drivers\etc\hosts) and save. Some websites will say you have an adblocker though, so you can save a backup of the hosts file, clear the hosts file, do whatever, then put the addresses back
+I cant write any code that would globally stop applications from stealing focus without your permission or content, which renders >1 monitor setups somewhat useless.
+Microsoft refuses to fix this. The best you can do is use tools like autoruns to find the offender, and kill/delete/configure the software.
+use an older ISO image, self explanatory. You won't get it from Microsoft so don't go looking there.
+Remove bitlocker encryption. Don't just delete random files it relies on though, you want to properly uninstall this one or your files might be locked up forever. This schema prevents you from accessing certain system folders or elements.
+If you bought a laptop or a prebuilt desktop from any OEM (Dell, Hp, lenovo, asus, etc) and you did NOT reinstall the OS, do so, because the OEM has system level spyware as well and I don't want to cover that here.
+Use Ethernet whenever possible
+If you still have a legacy BIOS motherboard, treasure it. UEFI sucks.
+DISCONNECT ethernet during startup to prevent some system reversions and auto-updates to os components.
+If you're on a laptop with a physical switch to turn off internet, do so before booting into Windows.
+NEVER auto-connect any wifi network, it will be used against you during startup.
+Use a public DNS server different than the one your ISP automatically assigns. Something like quad9 (global) [9.9.9.9] , UncensoredDNS (mainly eu) [91.239.100.100], or DNS.Watch (mainly eu) [84.200.69.80]
